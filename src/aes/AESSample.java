@@ -10,7 +10,7 @@ public class AESSample {
 	
 	// 建立一個 AES Key (256bits, 32bytes)
 	private static final String KEY = "012345678901234567890123456789AB"; // 32個字
-	private static final String KEY2 = "AB012345678901234567890123456789"; // 32個字
+	private static final String KEY2 = "012345678901234567890123456789AB"; // 32個字
 	
 	public static void main(String[] args) throws Exception {
 		// 明文
@@ -28,7 +28,7 @@ public class AESSample {
 		System.out.printf("密文: %s%n", Arrays.toString(encrypted));
 		System.out.println("-------------------------");
 		// 4. 解密
-		String output = KeyUtil.decryptWithAESKey(myKey, encrypted); // 拿到密文去解密
+		String output = KeyUtil.decryptWithAESKey(bossKey, encrypted); // 拿到密文去解密
 		System.out.printf("解密: %s%n", output);
 		
 		
