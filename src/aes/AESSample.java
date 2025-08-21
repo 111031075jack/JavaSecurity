@@ -10,6 +10,7 @@ public class AESSample {
 	
 	// 建立一個 AES Key (256bits, 32bytes)
 	private static final String KEY = "012345678901234567890123456789AB"; // 32個字
+	private static final String KEY2 = "AB012345678901234567890123456789"; // 32個字
 	
 	public static void main(String[] args) throws Exception {
 		// 明文
@@ -19,6 +20,8 @@ public class AESSample {
 		// 利用 AES 進行加密
 		// 1. 建立密鑰(AES的密鑰)
 		SecretKeySpec myKey = new SecretKeySpec(KEY.getBytes(), "AES");
+		SecretKeySpec bossKey = new SecretKeySpec(KEY2.getBytes(), "AES");
+		
 		// 2. 將明文加密
 		byte[] encrypted = KeyUtil.encryptWithAESKey(myKey, originalText);
 		// 3. 印出密文
